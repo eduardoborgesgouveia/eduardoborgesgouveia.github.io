@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>Eduardo Borges Gouveia</title>
-
+  <link rel="icon" type="image/png" href="img/loguinho.png" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,16 +27,16 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+  <nav class="navbar fixed-top navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Eduardo</a>
       <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
         <ul class="list-inline mb-2">
           <li class="list-inline-item">
-            <a href="#">About</a>
+            <a href="#about">About</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Projects</a>
+            <a href="#projects">Projects</a>
           </li>
           <li class="list-inline-item">
             <a href="#">Blog</a>
@@ -48,8 +48,8 @@
   </nav>
 
   <!-- Masthead -->
-  <header class="masthead text-white text-center" >
-    <div class="overlay"  ></div>
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
@@ -75,7 +75,7 @@
   </header>
 
   <section class="showcase">
-    <div class="container-fluid p-0">
+    <div id="about" class="container-fluid p-0">
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2 text-white showcase-img">
@@ -85,10 +85,11 @@
         </div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Hi!</h2>
-          <p style="text-align: justify;text-justify: inter-word;" class="lead mb-0">It's very nice to have you here!
-            I'm Eduardo, and I have a BSc in Biomedical Engineering from the Federal University of Uberlandia (2014 -
-            2019), a MSc in the Postgraduate Program in Biomedical Engineering at the Federal University of Uberlandia
-            (2019 - 2022) and, currently, I work as an RD&I Engineer at the Laboratory of Technology in Friction and
+          <p style="text-align: justify;text-justify: inter-word;" class="lead mb-0"> <strong> It's very nice to have
+              you here!</strong>
+            I'm Eduardo, and I have a BSc in Biomedical Engineering and a MSc in the Postgraduate Program in Biomedical
+            Engineering, both at the Federal University of Uberlandia. Currently, I work as an RD&I Engineer at the
+            Laboratory of Technology in Friction and
             Wear (LTAD) developing instruments for the Oil and Gas industry. As an engineer, I work developing on-demand
             solutions that involve the design and construction of hardware, firmware, and software. I have experience
             with instrumentation, biomedical signal processing, deep learning techniques for computer vision and
@@ -139,35 +140,35 @@
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide2.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide3.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide4.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide5.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide6.PNG">
             </div>
           </div>
@@ -176,21 +177,21 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide7.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide13.PNG">
             </div>
           </div>
         </div>
         <div class="col-lg-2">
           <div class="features-icons-item mx-auto mb-2 mb-lg-0 mb-lg-2">
-            <div class="features-icons-icon d-flex"  style="justify-content: center !important">
+            <div class="features-icons-icon d-flex" style="justify-content: center !important">
               <img src="img/skills/Slide9.PNG">
             </div>
           </div>
@@ -223,33 +224,96 @@
 
   <!-- Image Showcases -->
   <section class="showcase">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
+    <div id="projects" class="container-fluid p-0">
+      <h2 style="text-align: center;padding-top: 2%; padding-bottom: 2%;">Projects</h2>
 
+      <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2 text-white showcase-img"
           style="background-image: url('img/bg-showcase-1.jpg');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great
-            on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          <h2>Equipament's Calibration System</h2>
+          <p class="lead mb-0">System to manage the callibration process of equipaments on hospital. In there, the user
+            are able to registrate calibration data of each equipament of the hospital, generate reports and maintain
+            traceability.</p>
+          <br>
+          <h6>Electron Framework, Angular and Node.Js</h6>
         </div>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
         <div class="col-lg-6 my-auto showcase-text">
-          <h2>Updated For Bootstrap 4</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in
-            mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <h2>Pellets Quality Analysis</h2>
+          <p class="lead mb-0">Here, we developed an mobile app (Android - Ionic) to analyze the dimensions of pellets
+            through image processing (OpenCV)
+            and determinate some process variables that could be interfering on the full productivity of the machinary.
+          </p>
+          <br>
+          <h6>Ionic, Angular, OpenCV and Flask (Python)</h6>
         </div>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2 text-white showcase-img"
           style="background-image: url('img/bg-showcase-3.jpg');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper
-            customization options. Out of the box, just add your content and images, and your new landing page will be
-            ready to go!</p>
+          <h2>3 channels analog signal acquisition</h2>
+          <p class="lead mb-0">In this project we build a real time software (Windows Form - C#) to visualize and
+            process the analog signal data acquired using the A/D conversor from an Arduino. This system could be used
+            to see the analog signal of any three generic sensors, simultaneously.</p>
+          <br>
+          <h6>Arduino, C# and Real-time signal acquisition</h6>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Signal Generator</h2>
+          <p class="lead mb-0">Any time that we want to simulate an signal and apply a processing step on they, we could
+            use the Signal Generator developed in this educational and didatical project developed during my graduation.
+          </p>
+          <br>
+          <h6>C# and Signal Processing</h6>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"
+          style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>SSVEP - Steady state visually evoked potential</h2>
+          <p class="lead mb-0">
+            SSVEP are natural responses to visual stimulation. So, we developed an electroencephalographic equipament to
+            read signals of the visual cortex in the brain and discriminate for each stimulation the user was looking
+            for.
+          </p>
+          <br>
+          <h6>Windows Form - C#, Brain-Computer Interface and Signal Processing</h6>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Detection and Tracking of objects recorded using a event-based camera</h2>
+          <p class="lead mb-0">
+            The use of neuromorphic vision systems is a good match to embedded systems because of their power and
+            computational efficiency. However, an event-based system requires new computational approach to deal with
+            event-data and, therefore, we developed an YOLO-based model to detect objects recorded by those cameras.
+          </p>
+          <br>
+          <h6>Event-based camera, You Only Look Once (YOLO) and TensorFlow</h6>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"
+          style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Bet Way to Money</h2>
+          <p class="lead mb-0">
+            First of all, be aware: this project is only for fun porpouses and we do not garantee any profit in folowing
+            the system tips. However, the system is based on two deep learning models that sugests the winner of a match
+            on the
+            Bundesliga and the total of corners in the full time match.
+          </p>
+          <br>
+          <h6>Keras and Deep learning models</h6>
         </div>
       </div>
     </div>
