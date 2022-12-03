@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Flask API, Kubernets and Google Cloud: in a nutshell</title>
+  <link rel="icon" type="../image/png" href="../img/loguinho.png" />
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/landing-page.min.css" rel="stylesheet">
+  <link href="prose.css" rel="stylesheet">
+
+    
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.css">
+  
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-light bg-light static-top" style="position: inherit;">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Eduardo | Blog</a>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-2">
+
+
+        </ul>
+        <header class="blog-post-header">
+          <h2 class="title mb-2">Flask API, Kubernets and Google Cloud: in a nutshell</h2>
+          <div class="meta mb-3"><span class="date">Published Saturday, July 2, 2022</span></div>
+        </header>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <!-- <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                
+              </div>
+              <div class="col-12 col-md-3">
+                
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header> -->
+  <div class="main-wrapper">
+
+    <article class="blog-post px-3 py-5 p-md-5">
+      <div class="container single-col-max-width">
+
+
+        <div class="blog-post-body">
+
+          <div class="prose text-gray-500 mx-auto pt-5 pb-8">
+            <img class="img-fluid" src="img/gcp.png" alt="image">
+
+            <p>
+              Kubernetes (k8s) is an open-source container orchestration platform that automates the management,
+              scaling, and deployment of containerized applications. It allows developers to deploy and manage
+              applications in a declarative way, using YAML or JSON files to define the desired state of the
+              application.
+            </p>
+            <p>
+              Google Cloud Platform (GCP) is a cloud computing platform that provides a wide range of services and tools
+              for building, deploying, and managing applications. It offers a managed Kubernetes service called Google
+              Kubernetes Engine (GKE) that makes it easy to deploy and manage Kubernetes clusters on GCP.
+            </p>
+            <p>
+              Using Kubernetes and GCP together has several benefits, including:
+            </p>
+            <ul class="mb-5">
+              <li class="mb-2">Improved scalability: Kubernetes makes it easy to scale your application up or down based on demand, by automatically adding or removing replicas of your application.</li>
+              <li class="mb-2">Better availability: Kubernetes can automatically reschedule failed containers on healthy nodes, ensuring that your application stays available even if individual nodes or containers fail.</li>
+              <li class="mb-2">Simplified deployment and management: Kubernetes provides a declarative approach to defining and managing your application, which makes it easier to deploy and maintain complex applications.</li>
+              <li class="mb-2">Cost savings: GCP offers a pay-as-you-go pricing model for its services, which can help you save money compared to running your own infrastructure. Additionally, Kubernetes can help you optimize your usage of GCP resources by only using the resources that are needed to run your application.</li>
+              <li class="mb-2">Access to a wide range of GCP services: By using GCP with Kubernetes, you can easily integrate your application with other GCP services, such as storage, databases, monitoring, and networking. This allows you to build more powerful and feature-rich applications.</li>
+            </ul>
+            <p>
+              Overall, using Kubernetes and GCP together can help you build and deploy highly scalable, reliable, and cost-effective applications.
+            </p>
+            <p>
+              Here is a step-by-step guide on how to create a REST API using Flask in Python and launch it on Google Cloud Platform (GCP) using Kubernetes:
+            </p>
+
+            <p>
+              <strong> Step 1: Set up your GCP account and create a new project</strong>
+            </p>
+            <p>
+              Before you can launch your Flask app on GCP, you need to have a GCP account. If you don't already have one, go to the GCP website and sign up for an account.
+            </p>
+            <p>
+              Once you have an account, log in to the GCP Console and create a new project by clicking on the "Create" button. Give your project a name and select a location for it.
+            </p>
+            <p>
+              <strong>Step 2: Install the required packages</strong>
+            </p>
+            <p>
+              To create a REST API using Flask, you will need to install the Flask package. You can do this using <strong>pip</strong>, the Python package manager, by running the following command:
+            </p>
+          </div>
+            <pre>
+					    <code>
+pip install flask
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto pb-8">
+
+            <p>
+              You will also need to install the requests package, which is used to send HTTP <strong>requests</strong> to your Flask app. You can install this package by running the following command:
+            </p>
+          </div>
+
+            <pre>
+              <code>
+pip install requests
+                
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            
+            <p>
+              <strong>Step 3: Create your Flask app</strong>
+            </p>
+            <p>
+              Now that you have Flask and the requests package installed, you can create your Flask app. In a new file called app.py, add the following code:
+            </p>
+          </div>
+            <pre>
+              <code>
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+
+
+              </code>
+            </pre>
+
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+              This code creates a new Flask app and defines a simple / route that returns the string "Hello, World!".
+            </p>
+            <p>
+              <strong>Step 4: Add REST API endpoints to your app</strong>
+            </p>
+            <p>
+              Now that you have a basic Flask app, you can add some REST API endpoints to it. For example, you can add an endpoint that accepts GET requests at the /users route and returns a list of user data.
+              To do this, add the following code to your app.py file:              
+            </p>
+        </div>
+            <pre>
+              <code>
+@app.route('/users', methods=['GET'])
+def get_users():
+    # Return a list of user data in JSON format
+    return [
+        {'id': 1, 'name': 'Jane Doe'},
+        {'id': 2, 'name': 'John Doe'}
+    ]
+              </code>
+            </pre> 
+            <div class="prose text-gray-500 mx-auto  pb-8">               
+            <p>
+              This code defines a /users route that only accepts GET requests. When a GET request is received, it returns a list of user data in JSON format.
+            </p>
+            <p>
+              <strong>Step 5: Test your app locally</strong>
+            </p>
+            <p>
+              Before you deploy your app to GCP, you should test it locally to make sure it works as expected. To do this, run the following command in your terminal:
+            </p>
+          </div>
+            <pre>
+              <code>
+FLASK_APP=app.py flask run
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+
+              This will start the Flask development server and run your app locally. You can test your /users endpoint by sending a GET request to http://localhost:5000/users.
+            </p>
+            <p>
+              <strong>Step 6: Deploy your app to GCP</strong>
+              
+            </p>
+            <p>
+              Once you have tested your app locally and confirmed that it works as expected, you can deploy it to GCP. To do this, you will need to create a Docker container image for your app and push it to the Google Container Registry.
+            </p>
+            <p>
+              To create a Docker container image, you will need to create a Dockerfile that specifies how the image should be built. Here is an example Dockerfile that you can use:
+            </p>
+          </div>
+            <pre>
+              <code>
+FROM python:3.7-slim
+
+COPY . /app
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+              This Dockerfile uses the python:3.7-slim image as a base and copies all files in the current directory to the /app directory inside the container. It then installs the required Python packages using pip and runs the app.py script to start the Flask app.
+            </p>
+            <p>
+              To build the Docker container image, run the following command in your terminal:
+            </p>
+          </div>
+            <pre>
+              <code>
+docker build -t image-name .
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+              Replace 'image-name' with a name for your Docker image. This will create a Docker image with the specified name.                
+            </p>
+            <p>
+              Once the Docker image has been built, you can push it to the Google Container Registry by running the following command:
+            </p>
+          </div>
+            <pre>
+              <code>
+docker push gcr.io/project-id/image-name
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+              
+            Replace 'project-id' with the ID of your GCP project and 'image-name' with the name of your Docker image. This will push the Docker image to the Google Container Registry, where it can be used to deploy your Flask app to GCP.
+
+            </p>
+            <p>
+              <strong>Step 7: Deploy your app to Kubernetes on GCP</strong>
+            </p>
+            <p>
+              Now that your Flask app is packaged as a Docker container image and pushed to the Google Container Registry, you can deploy it to Kubernetes on GCP.
+            </p>
+            <p>
+              To do this, you will need to create a Kubernetes deployment and a Kubernetes service. A deployment is used to manage the deployment and scaling of your app, while a service is used to expose your app to external traffic.
+            </p>
+            <p>
+              To create a deployment and a service for your app, you can use the following deployment.yaml file:
+            </p>
+          </div>
+            <pre>
+              <code>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'deployment-name'
+  labels:
+    app: 'app-name'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 'app-name'
+  template:
+    metadata:
+      labels:
+        app: 'app-name'
+    spec:
+      containers:
+      - name: 'container-name'
+        image: gcr.io/project-id/image-name
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: 'service-name'
+  labels:
+    app: 'app-name'
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    target
+</code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+
+            <p>
+              Now that you have a deployment.yaml file, you can deploy your app to GCP by running the following command in your terminal:
+            </p>
+          </div>
+            <pre>
+              <code>
+gcloud auth login
+gcloud config set project 'project-id'
+gcloud deployment-manager deployments create 'deployment-name' --config deployment.yaml
+              </code>
+            </pre>
+          <div class="prose text-gray-500 mx-auto  pb-8">
+            <p>
+              This commands will use the gcloud command to authenticate and set the default project for your GCP account.
+            </p>
+            <p>
+              Replace 'project-id' with the ID of the GCP project where you want to deploy your app.
+            </p>
+            <p>
+              Replace 'deployment-name' with a name for your deployment, and deployment.yaml with the name of your YAML file. This will create the deployment and any associated resources, such as pods, on your GCP account.
+            </p>
+            <p>
+              After you have deployed your app on GCP, you can use the gcloud command-line tool to view the status of your app, view the logs, and perform other operations. For more information on using gcloud, you can refer to the Google Cloud Platform documentation.
+            </p>
+            <p>
+            </p>
+            <p>
+            </p>
+            <p>
+            </p>
+            <p>
+            </p>
+            <p>
+            </p>
+
+            </div>
+        </div>
+    </article>
+    <!-- Footer -->
+    <footer class="footer bg-light" style="background-color: #bdbebf!important;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <!-- <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li> -->
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Eduardo Portfolio. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a target="_blank" href="https://www.linkedin.com/in/eduardo-borges-gouveia-a478aa158/?locale=en_US">
+                  <i class="fab fa-linkedin-in fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a target="_blank" href="https://github.com/eduardoborgesgouveia">
+                  <i class="fab fa-github fa-2x fa-fw"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="highlight.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+
+</body>
